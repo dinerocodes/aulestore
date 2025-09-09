@@ -436,7 +436,7 @@
         function prepareOrderData(cart) {
                 return cart.map(item => `
     <div style="margin-bottom:15px;">
-      <img src="${item.image}" alt="${item.name}" 
+      <img src="https://aulestore.vercel.app/${item.image}" alt="${item.name}" 
            style="width:80px; height:auto; border:1px solid #ddd; border-radius:4px; margin-bottom:5px;">
       <p><strong>${item.name}</strong><br>
       ₦${item.price} × ${item.quantity} = ₦${item.price * item.quantity}</p>
