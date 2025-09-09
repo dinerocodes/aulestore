@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+  <title>AULÈ Fashion Store</title>
+  <!-- favicon -->
+  <link href="assets/img/favicon.png" rel="icon" sizes="20x20" type="image/png" />
+  <!-- Vendor Stylesheet -->
+  <link href="assets/css/vendor.css" rel="stylesheet" />
+  <!-- Main Stylesheet -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- responsive Stylesheet -->
+  <link href="assets/css/responsive.css" rel="stylesheet" />
+  </meta>
+  <style>
+    .shop-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px 0 10px;
+    }
+
+    .shop-pagination .page-btn {
+      padding: 8px 12px;
+      border: none;
+      background: #25d366;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .shop-pagination .page-btn.active {
+      background: #128c7e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- WhatsApp Floating Button with Text -->
+  <div class="whatsapp_container">
+    <a href="https://wa.me/2349167812189?text=Hello" class="whatsapp_float" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      <span class="whatsapp_text">Chat with us</span>
+    </a>
+  </div>
+  <!-- preloader area start -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader area end -->
+  <!-- search Popup -->
+  <div class="body-overlay" id="body-overlay"></div>
+  <div class="search-popup" id="search-popup">
+    <form action="index.html" class="search-form">
+      <div class="form-group">
+        <input class="form-control" placeholder="Search....." type="text" />
+      </div>
+      <button class="submit-btn" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <!-- search Popup end -->
+  <!-- navbar start -->
+  <div class="stoon-navbar">
+    <div class="header-top d-none d-sm-block">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-8">
+            <div class="contact">
+              <a href="https://wa.me/2349167812189?text=Hello"><i class="icon-call-header"></i> +234 916 781 2189</a>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="shipping text-center">
+              <p><b>FREE SHIPPING</b> - <span>on all orders over ₦100,000.00</span> <a href="#">Shop
+                  Now</a> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-area navbar-expand-lg nav-style-01">
+      <div class="container-fluid nav-container">
+        <div class="row">
+          <div class="col-lg-2 col-xl-1 col-4 order-1 align-self-center">
+            <div class="logo">
+              <a href="index.html"><img alt="" src="assets/img/logo.png" style="width:100px; height:auto;" /></a>
+            </div>
+          </div>
+          <div class="col-lg-7 col-xl-7 order-3 order-lg-2">
+            <div class="collapse navbar-collapse" id="shop-menu">
+              <ul class="navbar-nav menu-open text-left padding-top-5">
+                <li class="menu-item-has-children">
+                  <a href="./index.html">Home</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a>Shop</a>
+                </li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-xl-4 col-8 justify-content-end d-flex order-2 order-lg-3">
+            <div class="nav-right-part nav-right-part-03 d-flex">
+              <ul>
+                <li>
+                  <a href="#" id="search"><i class="icon-search"></i></a>
+                </li>
+                <li class="has-dropdown" id="cart-dropdown">
+                  <a href="#">
+                    <i class="icon-add-to-cat"></i>
+                    <span id="cart-count" class="badge badge-red">0</span>
+                  </a>
+                  <ul id="cart-items">
+                    <!-- Cart items will be injected here by JavaScript -->
+                    <li class="empty">Your cart is empty</li>
+                  </ul>
+                </li>
+
+                <div class="select-currency d-none d-xl-block">
+                  <select class="nice-select language-select">
+                    <option>English</option>
+                    <option>Bengali</option>
+                    <option>chinese</option>
+                  </select>
+                </div>
+                <div class="select-currency d-none d-xl-block">
+                  <select class="nice-select currency-select">
+                    <option>NGN</option>
+                  </select>
+                </div>
+            </div>
+            <div class="responsive-mobile-menu">
+              <div aria-expanded="false" class="menu toggle-btn d-block d-lg-none" data-target="#shop-menu"
+                data-toggle="collapse" role="button">
+                <div class="icon-left"></div>
+                <div class="icon-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- navbar end -->
+  <!-- breadcrumb start  -->
+  <div class="breadcrumb-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumb-inner d-flex justify-content-between">
+            <h2 class="page-title">Shop</h2>
+            <ul class="page-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a>Shop</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- breadcrumb end  -->
+  <!-- collection start  -->
+  <div class="collection-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-5 offset-md-1">
+          <ul class="nav nav-pills shop-tab">
+            <li><a class="active" data-toggle="pill" href="#one"><i class="fa fa-th-large"></i></a></li>
+            <li><a data-toggle="pill" href="#two"><i class="fa fa-bars"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-7">
+          <form action="#">
+            <select class="form-control sort-select">
+              <option>Default sorting</option>
+              <option>Sort by popularity</option>
+              <option>Sort by average rating</option>
+              <option>Sort by latest</option>
+              <option>Sort by price: low to high</option>
+              <option>Sort by price: high to low</option>
+            </select>
+            <i class="fa fa-chevron-down"></i>
+          </form>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="tab-pane fade in show active" id="one">
+          <div class="row" id="shop-grid">
+
+
+            <!--start of first list-->
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n1.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;17,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;17,000"
+                  data-image="assets/img/shop/n1.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n2.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;20,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;20,000"
+                  data-image="assets/img/shop/n2.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n3.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;20,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;20,000"
+                  data-image="assets/img/shop/n3.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n4.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;29,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;29,000" data-image="assets/img/shop/n4.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n5.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n5.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n6.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;17,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;17,000" data-image="assets/img/shop/n6.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="product-style-03 margin-top-40">
+                  <div class="thumb">
+                    <img alt="" src="assets/img/shop/n7.jpg" />
+                  </div>
+                  <div class="content text-center">
+                    <span class="brand">Brand: AULÈ</span>
+                    <ul class="justify-content-center margin-bottom-20">
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                    </ul>
+                    <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                    <div class="content-price d-flex align-self-center justify-content-center">
+                      <span class="new-price">&#8358;16,000</span>
+                    </div>
+                  </div>
+                  <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n7.jpg">
+                    Add to Cart
+                  </button>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n8.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n8.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n9.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;14,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;14,000" data-image="assets/img/shop/n9.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n10.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;25,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;25,000" data-image="assets/img/shop/n10.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n11.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n11.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n13.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;23,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;23,000" data-image="assets/img/shop/n13.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n14.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n14.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n15.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n15.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n19.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;17,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;17,000" data-image="assets/img/shop/n16.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n17.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;37,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;37,000" data-image="assets/img/shop/n17.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n18.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;20,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;20,000" data-image="assets/img/shop/n18.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n20.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;20,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;20,000" data-image="assets/img/shop/n20.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n21.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n21.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n22.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;19,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;19,000" data-image="assets/img/shop/n22.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n23.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;20,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;20,000" data-image="assets/img/shop/n23.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n24.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n24.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n25.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;16,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;16,000" data-image="assets/img/shop/n25.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n26.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;23,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;23,000" data-image="assets/img/shop/n26.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n27.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;17,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;17,000" data-image="assets/img/shop/n27.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n28.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;19,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;19,000" data-image="assets/img/shop/n28.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n29.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;19,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;19,000" data-image="assets/img/shop/n29.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n30.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;17,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;17,000" data-image="assets/img/shop/n30.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
+              <div class="product-style-03 margin-top-40">
+                <div class="thumb">
+                  <img alt="" src="assets/img/shop/n31.jpg" />
+                </div>
+                <div class="content text-center">
+                  <span class="brand">Brand: AULÈ</span>
+                  <ul class="justify-content-center margin-bottom-20">
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o"></i></a></li>
+                  </ul>
+                  <h6 class="title"><a href="#">SHEIN Mod</a></h6>
+                  <div class="content-price d-flex align-self-center justify-content-center">
+                    <span class="new-price">&#8358;14,000</span>
+                  </div>
+                </div>
+                <button class="add-to-cart" data-name="SHEIN Mod" data-price="&#8358;14,000" data-image="assets/img/shop/n31.jpg">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+
+            <!--end of 3 list-->
+
+            
+          </div>
+          <div class="shop-pagination" id="shop-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <!-- collection end  -->
+  <!-- delivery area start  -->
+  <div class="delivery-area padding-top-80">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="single-delivery-02 d-flex grey-bg justify-content-center border-0 py-4">
+            <div class="left">
+              <i class="icon-delivery-car red-icon"></i>
+            </div>
+            <div class="right">
+              <h6>FAST SHIPPING, RETURN</h6>
+              <p>Fast Shipping On All US Orders</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-delivery-02 d-flex grey-bg justify-content-center border-0 py-4">
+            <div class="left">
+              <i class="icon-money-back red-icon"></i>
+            </div>
+            <div class="right">
+              <h6>MONEY WORTH ITEMS</h6>
+              <p>100% Items Guarantee</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-delivery-02 d-flex grey-bg justify-content-center border-0 py-4">
+            <div class="left">
+              <i class="icon-phone-support red-iconv "></i>
+            </div>
+            <div class="right">
+              <h6>+234 916 781 2189</h6>
+              <p>24/7 Days Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- delivery area end  -->
+  <!-- instagram start -->
+  <div class="instagram-area margin-top-75">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="instagram-title margin-bottom-40">
+            <h4><span>@ <a href="./collection-full.html">OUR GALLERY</a></span< /h4>
+                <h6>shop With Us!</h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="instagram-slider">
+            <div class="thumb">
+              <img src="assets/img/shop/n10.jpg" alt="">
+            </div>
+            <div class="thumb">
+              <img src="assets/img/shop/n1.jpg" alt="">
+            </div>
+            <div class="thumb">
+              <img src="assets/img/shop/n20.jpg" alt="">
+            </div>
+            <div class="thumb">
+              <img src="assets/img/shop/n14.jpg" alt="">
+            </div>
+            <div class="thumb">
+              <img src="assets/img/shop/n17.jpg" alt="">
+            </div>
+            <div class="thumb">
+              <img src="assets/img/shop/n11src=" assets/img/shop/n10.jpg".jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- instagram end -->
+  <!-- footer area start -->
+  <footer class="footer-area footer-style-2 padding-top-80 margin-top-80">
+    <div class="footer-top padding-bottom-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="widget widget_about">
+              <a href="index.html">
+                <img src="assets/img/logo-white.png" alt="" style="width:120px; height:auto;">
+              </a>
+              <p>AULÈ blends elegance and craftsmanship to create timeless clothing
+                that embodies sophistication, confidence, and premium quality.</p>
+
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 offset-lg-1">
+            <div class="widget contact-widget">
+              <h4 class="widget-title">GET IN TOUCH</h4>
+              <ul class="contact_info_list">
+                <li class="single-info-item">
+                  <div class="icon">
+                    <i class="icon-home-foother"></i>
+                  </div>
+                  <div class="details">
+                    <span>Lagos, Nigeria.</span>
+                  </div>
+                </li>
+                <li class="single-info-item">
+                  <div class="icon">
+                    <i class="icon-call-footer"></i>
+                  </div>
+                  <div class="details">
+                    <a href="https://wa.me/2349167812189?text=Hello">+234 916 781 2189</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 align-self-center">
+            <p>© AULÈ 2020. Powered with <i class="fa fa-heart"></i> by <a href="https://dinero-site.vercel.app/"
+                target="_blanc">Dinero's Code</a>.</p>
+          </div>
+          <!-- <div class="col-md-6">
+            <ul>
+              <li><a href="#"><img src="assets/img/payment/1.png" alt=""></a></li>
+              <li><a href="#"><img src="assets/img/payment/2.png" alt=""></a></li>
+              <li><a href="#"><img src="assets/img/payment/3.png" alt=""></a></li>
+              <li><a href="#"><img src="assets/img/payment/4.png" alt=""></a></li>
+              <li><a href="#"><img src="assets/img/payment/5.png" alt=""></a></li>
+              <li><a href="#"><img src="assets/img/payment/6.png" alt=""></a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="cart-popup"></div>
+  <!-- footer area end -->
+  <!-- back to top area start -->
+  <div class="back-to-top">
+    <span class="back-top"><i class="fa fa-angle-up"></i></span>
+  </div>
+  <!-- back to top area end -->
+  <!-- all plugins here -->
+  <script src="assets/js/vendor.js"></script>
+  <!-- main js  -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Utilities ---
+        function parsePrice(v) {
+          if (v == null) return 0;
+          // remove currency symbols and commas
+          return parseFloat(String(v).replace(/[^0-9.-]+/g, "")) || 0;
+        }
+        function formatPrice(n) { return (n || 0).toFixed(2); }
+
+        // --- State (load from localStorage) ---
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // --- Find UI elements (try multiple fallbacks) ---
+        const cartCountEl = document.getElementById("cart-count")
+          || document.querySelector(".has-dropdown .badge.badge-red")
+          || document.querySelector(".badge.badge-red");
+
+        const cartDropdownList = document.getElementById("cart-items")
+          || document.querySelector(".has-dropdown > ul")
+          || document.querySelector(".has-dropdown ul");
+
+        const cartTableBody = document.getElementById("cart-table-body"); // cart page table body
+        const cartTotalEl = document.getElementById("cart-total"); // cart page total span
+
+        // Create popup element if missing
+        let popup = document.getElementById("cart-popup");
+        if (!popup) {
+          popup = document.createElement("div");
+          popup.id = "cart-popup";
+          popup.style.position = "fixed";
+          popup.style.bottom = "30px";
+          popup.style.right = "30px";
+          popup.style.background = "#25d366";
+          popup.style.color = "#fff";
+          popup.style.padding = "12px 20px";
+          popup.style.borderRadius = "6px";
+          popup.style.fontWeight = "600";
+          popup.style.opacity = "0";
+          popup.style.pointerEvents = "none";
+          popup.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+          popup.style.transform = "translateY(20px)";
+          popup.style.zIndex = "9999";
+          document.body.appendChild(popup);
+        }
+        function showCartPopup(msg) {
+          popup.textContent = msg;
+          popup.style.opacity = "1";
+          popup.style.transform = "translateY(0)";
+          setTimeout(() => {
+            popup.style.opacity = "0";
+            popup.style.transform = "translateY(20px)";
+          }, 1800);
+        }
+
+        // --- Persistence helpers ---
+        function saveCart() {
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartCount();
+        }
+        function updateCartCount() {
+          const totalCount = cart.reduce((s, it) => s + (parseInt(it.quantity) || 0), 0);
+          if (cartCountEl) cartCountEl.textContent = totalCount;
+        }
+
+        // --- Render dropdown mini-cart ---
+        function renderMiniCart() {
+          if (!cartDropdownList) return;
+          cartDropdownList.innerHTML = "";
+          if (!cart.length) {
+            const li = document.createElement("li");
+            li.className = "empty";
+            li.textContent = "Your cart is empty";
+            cartDropdownList.appendChild(li);
+            return;
+          }
+          let total = 0;
+          cart.forEach((it, idx) => {
+            const price = parseFloat(it.price) || 0;
+            const qty = parseInt(it.quantity) || 1;
+            total += price * qty;
+
+            const li = document.createElement("li");
+            li.innerHTML = `
+            <div class="d-flex">
+              <div class="thumb">
+                <img alt="${escapeHtml(it.name)}" src="${it.image || 'assets/img/shop/c1.png'}" style="width:60px;height:auto"/>
+              </div>
+              <div class="content">
+                <h6 class="title">${escapeHtml(it.name)}</h6>
+                <span class="price">₦${formatPrice(price * qty)}</span>
+              </div>
+              <div class="action">
+                <input type="number" value="${qty}" min="1" data-index="${idx}" class="mini-qty" style="width:60px"/>
+                <a class="remove-mini" href="#" data-index="${idx}">Remove</a>
+              </div>
+            </div>
+          `;
+            cartDropdownList.appendChild(li);
+          });
+
+          // total + go to cart
+          const totalLi = document.createElement("li");
+          totalLi.innerHTML = `
+          <li>
+            <h6 class="tprice"><span>Total price: </span>₦${formatPrice(total)}</h6>
+            <div class="btn-wrapper">
+              <a class="btn btn-cart" href="shoping-cart.html">Go to cart</a>
+            </div>
+          </li>
+
+        `;
+          // note: append as HTML node - unwrap the outer <li> created
+          cartDropdownList.appendChild(totalLi.firstElementChild || totalLi);
+        }
+
+        // --- Render full cart page table ---
+        function renderCartPage() {
+          if (!cartTableBody) return;
+          cartTableBody.innerHTML = "";
+          if (!cart.length) {
+            cartTableBody.innerHTML = `<tr><td colspan="5" class="text-center">Your cart is empty.</td></tr>`;
+            if (cartTotalEl) cartTotalEl.textContent = "0.00";
+            return;
+          }
+          let grand = 0;
+          cart.forEach((it, idx) => {
+            const price = parseFloat(it.price) || 0;
+            const qty = parseInt(it.quantity) || 1;
+            const rowTotal = price * qty;
+            grand += rowTotal;
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <th scope="row" class="d-flex">
+              <div class="left"><img src="${it.image || 'assets/img/shop/c1.png'}" alt="" style="width:80px"/></div>
+              <div class="right" style="margin-left:10px;">
+                <h6 class="name">${escapeHtml(it.name)}</h6>
+                ${it.size ? `<h6 class="title">Size: <span class="values">${escapeHtml(it.size)}</span></h6>` : ''}
+                ${it.color ? `<h6 class="title">Color: <span class="values">${escapeHtml(it.color)}</span></h6>` : ''}
+              </div>
+            </th>
+            <td>$${formatPrice(price)}</td>
+            <td><input type="number" class="qty-input" min="1" value="${qty}" data-index="${idx}" style="width:70px;text-align:center"/></td>
+            <td class="row-total">$${formatPrice(rowTotal)}</td>
+            <td>
+              <div class="action">
+                <a href="#" class="remove-item" data-index="${idx}"><i class="fa fa-times"></i></a>
+                <a href="#" class="edit-item" data-index="${idx}"><i class="fa fa-pencil"></i></a>
+              </div>
+            </td>
+          `;
+            cartTableBody.appendChild(tr);
+          });
+          if (cartTotalEl) cartTotalEl.textContent = formatPrice(grand);
+        }
+
+        // --- Helper to escape HTML in names ---
+        function escapeHtml(str) {
+          return String(str || "").replace(/[&<>"']/g, function (m) {
+            return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m];
+          });
+        }
+
+        // --- Update all UI pieces ---
+        function updateAll() {
+          renderMiniCart();
+          renderCartPage();
+          updateCartCount();
+          saveCart();
+        }
+
+        // --- Event delegation for add-to-cart (works with dynamic items/pagination) ---
+        document.body.addEventListener("click", function (e) {
+          const addBtn = e.target.closest(".add-to-cart");
+          if (!addBtn) return;
+          e.preventDefault();
+
+          const name = addBtn.dataset.name || addBtn.getAttribute("data-name") || "Product";
+          const price = parsePrice(addBtn.dataset.price || addBtn.getAttribute("data-price") || 0);
+          const image = addBtn.dataset.image || addBtn.getAttribute("data-image") || "";
+
+          // Add or increment
+          const existing = cart.find(it => it.name === name && it.price === price && it.image === image);
+          if (existing) {
+            existing.quantity = (parseInt(existing.quantity) || 0) + 1;
+          } else {
+            cart.push({ name, price, image, quantity: 1 });
+          }
+          updateAll();
+          showCartPopup(name + " added to cart");
+          console.log("Added to cart:", name, price, image, "Cart now:", cart);
+        });
+
+        // --- Event delegation for mini-cart remove & qty ---
+        document.body.addEventListener("click", function (e) {
+          const rem = e.target.closest(".remove-mini, .remove-item");
+          if (!rem) return;
+          e.preventDefault();
+          const idx = parseInt(rem.dataset.index, 10);
+          if (!Number.isNaN(idx)) {
+            const removed = cart.splice(idx, 1);
+            updateAll();
+            showCartPopup((removed[0] && removed[0].name ? removed[0].name : "Item") + " removed");
+          }
+        });
+
+        document.body.addEventListener("change", function (e) {
+          const qtyInput = e.target.closest(".mini-qty, .qty-input");
+          if (!qtyInput) return;
+          const idx = parseInt(qtyInput.dataset.index, 10);
+          const val = Math.max(1, parseInt(qtyInput.value, 10) || 1);
+          if (!Number.isNaN(idx) && cart[idx]) {
+            cart[idx].quantity = val;
+            updateAll();
+            showCartPopup(cart[idx].name + " quantity updated");
+          }
+        });
+
+        // --- Clear cart link/button (if exists with id="clear-cart") ---
+        const clearBtn = document.getElementById("clear-cart");
+        if (clearBtn) {
+          clearBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (!cart.length) return;
+            if (confirm("Clear the shopping cart?")) {
+              cart = [];
+              updateAll();
+            }
+          });
+        }
+
+        // --- Initial render on page load ---
+        updateAll();
+
+        // Debug helper
+        window._myCart = {
+          get: () => cart,
+          save: () => saveCart(),
+          clear: () => { cart = []; updateAll(); },
+          render: () => updateAll()
+        };
+        console.log("Cart initialized:", cart);
+      });
+    })(); 
+  </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var itemsPerPage = 6;
+      var grid = document.getElementById("shop-grid");
+      if (!grid) return;
+      var items = Array.prototype.slice.call(grid.children); // direct column wrappers
+      var pager = document.getElementById("shop-pagination");
+      if (!pager) return;
+      var currentPage = 1;
+      var pageCount = Math.ceil(items.length / itemsPerPage);
+
+      function showPage(page) {
+        // bounds
+        if (page < 1) page = 1;
+        if (page > pageCount) page = pageCount;
+        currentPage = page;
+
+        // hide all
+        items.forEach(function (el) { el.style.display = "none"; });
+        // show slice
+        var start = (page - 1) * itemsPerPage;
+        var end = start + itemsPerPage;
+        items.slice(start, end).forEach(function (el) { el.style.display = ""; });
+
+        // update active button
+        Array.prototype.forEach.call(pager.querySelectorAll(".page-btn"), function (btn) {
+          btn.classList.toggle("active", parseInt(btn.dataset.page, 10) === currentPage);
+        });
+
+        // 👇 Scroll to top of the grid
+        grid.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function buildPager() {
+        pager.innerHTML = "";
+        for (var i = 1; i <= pageCount; i++) {
+          var btn = document.createElement("button");
+          btn.className = "page-btn" + (i === currentPage ? " active" : "");
+          btn.textContent = i;
+          btn.dataset.page = i;
+          btn.addEventListener("click", function (e) {
+            var pg = parseInt(e.currentTarget.dataset.page, 10);
+            showPage(pg);
+          });
+          pager.appendChild(btn);
+        }
+      }
+
+      buildPager();
+      showPage(1);
+    });
+  </script>
+
+
+
+</body>
+
+</html>
